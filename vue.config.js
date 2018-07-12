@@ -14,9 +14,9 @@ module.exports = {
   pages: {
     // 首页
     index: {
-      entry: 'src/module1/main.js',
-      template: 'public/module1.html',
-      filename: 'module1.html'
+      entry: 'src/index/main.js',
+      template: 'public/index.html',
+      filename: 'index.html'
     },
     module2: {
       entry: 'src/module2/main.js',
@@ -35,7 +35,7 @@ module.exports = {
       // 公共组件
       .set('com', resolve('src/components'))
       // home开发目录
-      .set('module1', resolve('src/module1'))
+      .set('index', resolve('src/index'))
   },
 
   // 插件

@@ -78,6 +78,43 @@ data(){
     
     > 使用见 src/modules1/views/Home.vue
  
+10. 关于axios
+
+    > 如果返回数据格式/src/assets/js/api.js的处理不了
+    
+    > 可以在新建一个type单独处理，不要在单独引入axios 
+    
+    > 具体的业务逻辑代码不要写在api.js封装函数内，
+    
+    > api.js只负责预处理一些请求头，根据数据请求到指定url返回接口数据
+
+
+11. 可以把一些预处理的代码封装成文件
+
+```javascript
+// 对一些公用的预处理进行提取
+// src/assets/js/common.js
+import 'babel-polyfill'
+import Vue from 'vue'
+import 'assets/less/bhj.less'
+import 'home/assets/less/fonts.less'
+import ajax from 'assets/js/ajax'
+import { message } from 'assets/js/message'
+import local from 'assets/js/store'
+
+Vue.config.productionTip = false
+Vue.prototype.$ajax = ajax
+Vue.prototype.$msg = message
+Vue.prototype.$local = local
+
+export default Vue
+
+// src/modules/main.js
+import Vue from 'assets/js/common'
+```
+
+
+12. mounted和created钩子函数只能触发时间或简单的绑定监听事件
 
 
 # 目录介绍

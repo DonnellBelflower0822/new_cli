@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import HelloWorld from 'module1/components/HelloWorld.vue'
+  import HelloWorld from 'index/components/HelloWorld.vue'
   // 此列表数据只是这个组件用，
   // 但由于直接写在data里面会是此页面太长
   // 所以把tmp数据写在当前目录的data.js文件
